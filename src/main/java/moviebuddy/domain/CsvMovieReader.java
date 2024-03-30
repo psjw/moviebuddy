@@ -2,6 +2,7 @@ package moviebuddy.domain;
 
 import moviebuddy.ApplicationException;
 import moviebuddy.util.FileSystemUtils;
+import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.net.URI;
@@ -15,6 +16,10 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+//@Component
+//@Repository("movieReader") //최초 타입비교, 다음 설정 파라미터 이름 비교
+@Repository
+//@Qualifier("csvMovieReader")
 public class CsvMovieReader implements MovieReader{
     /**
      * 영화 메타데이터를 읽어 저장된 영화 목록을 불러온다.
