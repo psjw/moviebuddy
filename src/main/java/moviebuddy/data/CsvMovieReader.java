@@ -1,9 +1,11 @@
 package moviebuddy.data;
 
 import moviebuddy.ApplicationException;
+import moviebuddy.MovieBuddyProfile;
 import moviebuddy.domain.Movie;
 import moviebuddy.domain.MovieReader;
 import moviebuddy.util.FileSystemUtils;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
@@ -20,6 +22,7 @@ import java.util.stream.Collectors;
 
 //@Component
 //@Repository("movieReader") //최초 타입비교, 다음 설정 파라미터 이름 비교
+@Profile(MovieBuddyProfile.CSV_MODE)
 @Repository
 //@Qualifier("csvMovieReader")
 public class CsvMovieReader implements MovieReader {

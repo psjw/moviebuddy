@@ -1,9 +1,11 @@
 package moviebuddy.domain;
 
 import moviebuddy.MovieBuddyFactory;
+import moviebuddy.MovieBuddyProfile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 /**
  * @author springrunner.kr@gmail.com
  */
+
+@ActiveProfiles(MovieBuddyProfile.CSV_MODE)
 @SpringJUnitConfig(MovieBuddyFactory.class)
 //@ExtendWith(SpringExtension.class) //JUnit이 테스트 실행전략을 확장할때 사용 // SpringExtension에서 제공하는 스프링 컨테이너 제공 관리
 //@ContextConfiguration(classes = MovieBuddyFactory.class) //해당 Annotation이 지정한 스프링 구성정보를 바탕으로 실행
